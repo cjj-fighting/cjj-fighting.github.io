@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS3总结系列之二 | J.C&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="2D转换translate() 方法translate()方法，根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动；移动 translate(x, y) 可以改变元素的位置，x、y可为负值：  移动位置相当于自身原来位置 y轴正方向朝下 除了可以像素值，也可以是百分比，相对于自身的宽度或高度 transform: translate(50px,100px); 是从左边元素移动50个像素">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3总结系列之二">
+<meta property="og:url" content="http://yoursite.com/2017/03/20/CSS3总结系列之二/index.html">
+<meta property="og:site_name" content="J.C&#39;s blog">
+<meta property="og:description" content="2D转换translate() 方法translate()方法，根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动；移动 translate(x, y) 可以改变元素的位置，x、y可为负值：  移动位置相当于自身原来位置 y轴正方向朝下 除了可以像素值，也可以是百分比，相对于自身的宽度或高度 transform: translate(50px,100px); 是从左边元素移动50个像素">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-03-20T08:28:59.500Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3总结系列之二">
+<meta name="twitter:description" content="2D转换translate() 方法translate()方法，根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动；移动 translate(x, y) 可以改变元素的位置，x、y可为负值：  移动位置相当于自身原来位置 y轴正方向朝下 除了可以像素值，也可以是百分比，相对于自身的宽度或高度 transform: translate(50px,100px); 是从左边元素移动50个像素">
+  
+    <link rel="alternate" href="/atom.xml" title="J.C&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">J.C&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS3总结系列之二" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/20/CSS3总结系列之二/" class="article-date">
+  <time datetime="2017-03-20T08:27:59.000Z" itemprop="datePublished">2017-03-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3总结系列之二
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2D转换"><a href="#2D转换" class="headerlink" title="2D转换"></a>2D转换</h2><h3 id="translate-方法"><a href="#translate-方法" class="headerlink" title="translate() 方法"></a>translate() 方法</h3><p>translate()方法，根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动；<br>移动 translate(x, y) 可以改变元素的位置，x、y可为负值：</p>
+<ul>
+<li>移动位置相当于自身原来位置</li>
+<li>y轴正方向朝下</li>
+<li>除了可以像素值，也可以是百分比，相对于自身的宽度或高度</li>
+<li><code>transform: translate(50px,100px);</code> 是从左边元素移动50个像素，并从顶部移动100像素</li>
+</ul>
+<h3 id="rotate-方法"><a href="#rotate-方法" class="headerlink" title="rotate() 方法"></a>rotate() 方法</h3><p>rotate()方法，在一个给定度数顺时针旋转的元素。负值是元素逆时针旋转：<br><code>transform: rotate(30deg);</code>  元素顺时针旋转30度</p>
+<h3 id="scale-方法"><a href="#scale-方法" class="headerlink" title="scale() 方法"></a>scale() 方法</h3><p>scale()方法，该元素增加或减少的大小，取决于宽度（X轴）和高度（Y轴）的参数：<br><code>transform: scale(2,3);</code> 转变宽度为原来的大小的2倍，和其原始大小3倍的高度</p>
+<h3 id="skew-方法"><a href="#skew-方法" class="headerlink" title="skew() 方法"></a>skew() 方法</h3><p>transform:skew(angle ,angle);<br>包含两个参数值，分别表示X轴和Y轴倾斜的角度，如果第二个参数为空，则默认为0，参数为负表示向相反方向倾斜,x、y的取值可为小数</p>
+<ul>
+<li>skewX(angle);表示只在X轴(水平方向)倾斜;</li>
+<li>skewY(angle);表示只在Y轴(垂直方向)倾斜;</li>
+</ul>
+<h3 id="matrix-方法"><a href="#matrix-方法" class="headerlink" title="matrix() 方法"></a>matrix() 方法</h3><p>matrix()方法和2D变换方法合并成一个;<br>matrix 方法有六个参数，包含旋转，缩放，移动（平移）和倾斜功能;<br><code>transform:matrix(0.866,0.5,-0.5,0.866,0,0);</code>旋转元素30°</p>
+<h2 id="3D"><a href="#3D" class="headerlink" title="3D"></a>3D</h2><h3 id="左手坐标系"><a href="#左手坐标系" class="headerlink" title="左手坐标系"></a>左手坐标系</h3><p>伸出左手，让拇指和食指成“L”形，大拇指向右，食指向上，中指指向前方。这样我们就建立了一个左手坐标系，拇指、食指和中指分别代表X、Y、Z轴的正方向；</p>
+<h3 id="左手法则"><a href="#左手法则" class="headerlink" title="左手法则"></a>左手法则</h3><p>左手握住旋转轴，竖起拇指指向旋转轴正方向，正向就是其余手指卷曲的方向。</p>
+<ul>
+<li>rotateX() 方法   围绕其在一个给定度数X轴旋转的元素</li>
+<li>rotateY() 方法   围绕其在一个给定度数Y轴旋转的元素</li>
+</ul>
+<h3 id="透视"><a href="#透视" class="headerlink" title="透视"></a>透视</h3><p>电脑显示屏是一个2D平面，图像之所以具有立体感（3D效果），其实只是一种视觉呈现，通过透视可以实现此目的。透视可以将一个2D平面，在转换的过程当中，呈现3D效果。<br>注：并非任何情况下需要透视效果，根据开发需要进行设置。<br>perspective有两种写法</p>
+<ul>
+<li>作为一个属性，设置给父元素，作用于所有3D转换的子元素</li>
+<li>作为transform属性的一个值，做用于元素自身</li>
+</ul>
+<h3 id="3D呈现"><a href="#3D呈现" class="headerlink" title="3D呈现"></a>3D呈现</h3><p>设置内嵌的元素在 3D 空间如何呈现，这些子元素必须为转换原素。</p>
+<ul>
+<li>flat：所有子元素在 2D 平面呈现</li>
+<li>preserve-3d：保留3D空间</li>
+</ul>
+<p>3D元素构建是指某个图形是由多个元素构成的，可以给这些元素的父元素设置transform-style: preserve-3d来使其变成一个真正的3D图形</p>
+<p>backface-visibility 设置元素背面是否可见</p>
+<p>perspective-origin 规定 3D 元素的底部位置</p>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>当在 @keyframes 创建动画，把它绑定到一个选择器，否则动画不会有任何效果。<br>指定至少这两个CSS3的动画属性绑定向一个选择器：</p>
+<ul>
+<li>规定动画的名称</li>
+<li>规定动画的时长</li>
+</ul>
+<p>注意: 必须定义动画的名称和动画的持续时间。如果省略的持续时间，动画将无法运行，因为默认值是0。</p>
+<p>动画是CSS3中具有颠覆性的特征之一，可通过设置多个节点来精确控制一个或一组动画，常用来实现复杂的动画效果</p>
+<ul>
+<li><p>必要元素：</p>
+<ul>
+<li>通过@keyframes指定动画序列；</li>
+<li>通过百分比将动画序列分割成多个节点；</li>
+<li>在各节点中分别定义各属性</li>
+<li>通过animation将动画应用于相应元素；</li>
+</ul>
+</li>
+<li><p>关键属性：</p>
+<ul>
+<li>animation-name设置动画序列名称</li>
+<li>animation-duration动画持续时间</li>
+<li>animation-delay定义动画什么时候开始</li>
+<li>animation-timing-function动画执行速度，linear（匀速）、ease（默认，动画以低速开始，然后加快，在结束前变慢）、ease-in（低速开始）、ease-out（低速结束）、ease-in-out（低速开始和结束）等</li>
+<li>animation-play-state动画播放状态，running、paused等</li>
+<li>animation-direction动画逆播，alternate（偶数次反向）、alternate-reverse（奇数次反向）、reverse（反向播放）等，默认normal</li>
+<li>animation-fill-mode动画执行完毕后状态，forwards、backwards等</li>
+<li>animation-iteration-count动画执行次数，inifinate（无限循环），等默认是1</li>
+<li>steps(60) 表示动画分成60步完成</li>
+</ul>
+</li>
+</ul>
+<p>参数值的顺序：<br>关于几个值，除了名字，动画时间，延时有严格顺序要求其它随意</p>
+<p>动画是使元素从一种样式逐渐变化为另一种样式的效果；<br>可以改变任意多的样式任意多的次数；<br>用百分比来规定变化发生的时间，或用关键词 “from” 和 “to”，等同于 0% 和 100%；<br>0% 是动画的开始，100% 是动画的完成；<br>为了得到最佳的浏览器支持，定义 0% 和 100% 选择器最好；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/20/CSS3总结系列之二/" data-id="cjlz6ef8l0001c0whxarw31v2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/20/CSS3总结系列之三/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS3总结系列之三
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/06/古诗词系列之一/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">古诗词系列之一</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/09/12/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/20/CSS3总结系列之三/">CSS3总结系列之三</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/20/CSS3总结系列之二/">CSS3总结系列之二</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/古诗词系列之一/">古诗词系列之一</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/04/CSS3总结系列之一/">CSS3总结系列之一</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 J.C<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

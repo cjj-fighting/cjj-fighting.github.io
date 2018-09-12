@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS3总结系列之三 | J.C&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="弹性盒子弹性盒子是 CSS3 的一种新的布局模式；CSS3 弹性盒（ Flexible Box 或 flexbox），是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式；引入弹性盒布局模型的目的是提供一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间； 主轴：Flex容器的主轴主要用来配置Flex项目，默认是水平方向侧轴：与主轴垂直的轴称作侧轴，默认">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3总结系列之三">
+<meta property="og:url" content="http://yoursite.com/2017/03/20/CSS3总结系列之三/index.html">
+<meta property="og:site_name" content="J.C&#39;s blog">
+<meta property="og:description" content="弹性盒子弹性盒子是 CSS3 的一种新的布局模式；CSS3 弹性盒（ Flexible Box 或 flexbox），是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式；引入弹性盒布局模型的目的是提供一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间； 主轴：Flex容器的主轴主要用来配置Flex项目，默认是水平方向侧轴：与主轴垂直的轴称作侧轴，默认">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-03-20T09:21:52.470Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3总结系列之三">
+<meta name="twitter:description" content="弹性盒子弹性盒子是 CSS3 的一种新的布局模式；CSS3 弹性盒（ Flexible Box 或 flexbox），是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式；引入弹性盒布局模型的目的是提供一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间； 主轴：Flex容器的主轴主要用来配置Flex项目，默认是水平方向侧轴：与主轴垂直的轴称作侧轴，默认">
+  
+    <link rel="alternate" href="/atom.xml" title="J.C&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">J.C&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS3总结系列之三" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/20/CSS3总结系列之三/" class="article-date">
+  <time datetime="2017-03-20T09:20:43.000Z" itemprop="datePublished">2017-03-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3总结系列之三
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="弹性盒子"><a href="#弹性盒子" class="headerlink" title="弹性盒子"></a>弹性盒子</h2><p>弹性盒子是 CSS3 的一种新的布局模式；<br>CSS3 弹性盒（ Flexible Box 或 flexbox），是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式；<br>引入弹性盒布局模型的目的是提供一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间；</p>
+<p>主轴：Flex容器的主轴主要用来配置Flex项目，默认是水平方向<br>侧轴：与主轴垂直的轴称作侧轴，默认是垂直方向的<br>方向：默认主轴从左向右，侧轴默认从上到下<br>主轴和侧轴并不是固定不变的，通过flex-direction可以互换。</p>
+<ul>
+<li><p>必要元素：</p>
+<ul>
+<li>指定一个盒子为伸缩盒子 display: flex</li>
+<li>设置属性来调整此盒的子元素的布局方式 例如 flex-direction</li>
+<li>明确主侧轴及方向</li>
+<li>可互换主侧轴，也可改变方向</li>
+</ul>
+</li>
+<li><p>各属性详解</p>
+<ul>
+<li>flex-direction调整主轴方向 row （横向从左到右排列（左对齐） 默认）、row-reverse（反转横向排列）、column（纵向排列）、column-reverse（翻转纵向排列）</li>
+<li>justify-content调整主轴对齐flex-start （弹性项目向行头紧挨着填充，默认）、 flex-end（弹性项目向行尾紧挨着填充）、center（弹性项目居中紧挨着填充）、space-between（弹性项目平均分布在该行上）、space-around（弹性项目平均分布在该行上，两边留有一半的间隔空间）</li>
+<li>align-items调整侧轴对齐flex-start、flex-end、center 、baseline（如弹性盒子元素的行内轴与侧轴为同一条，则该值与’flex-start’等效。其它情况下，该值将参与基线对齐）、 stretch（如果指定侧轴大小的属性值为’auto’，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照’min/max-width/height’属性的限制）</li>
+<li>flex-wrap控制是否换行nowrap（默认， 弹性容器为单行，该情况下弹性子项可能会溢出容器）、wrap（多行）wrap-reverse （反转 wrap 排列）</li>
+<li>align-content堆栈（由flex-wrap产生的独立行）对齐 flex-start | flex-end | center | space-between | space-around | stretch</li>
+<li>flex-flow是flex-direction、flex-wrap的简写形式</li>
+<li>flex子项目在主轴的缩放比例，不指定flex属性，则不参与伸缩分配</li>
+<li>order控制子项目的排列顺序，正序方式排序，从小到大</li>
+</ul>
+</li>
+</ul>
+<h2 id="多列布局"><a href="#多列布局" class="headerlink" title="多列布局"></a>多列布局</h2><p>CSS3 可以将文本内容设计成像报纸一样的多列布局；</p>
+<ul>
+<li>属性如下：</li>
+</ul>
+<p>column-count 指定元素应该被分割的列数<br>column-fill     指定如何填充列<br>column-gap    指定列与列之间的间隙<br>column-rule-color    指定两列间边框的颜色<br>column-rule-style    指定两列间边框的样式<br>column-rule-width    指定两列间边框的厚度<br>column-span    指定元素要跨越多少列<br>column-width    指定列的宽度<br>columns    设置 column-width 和 column-count 的简写<br>column-rule    所有 column-rule- * 属性的简写，可设置颜色，样式，厚度</p>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>不同浏览器所支持的字体格式是不一样的</p>
+<ul>
+<li><p>TureType(.ttf)格式<br>.ttf字体是Windows和Mac的最常见的字体，是一种RAW格式，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome4+、Safari3+、Opera10+、iOS Mobile、Safari4.2+；</p>
+</li>
+<li><p>OpenType(.otf)格式<br>.otf字体被认为是一种原始的字体格式，其内置在TureType的基础上，支持这种字体的浏览器有Firefox3.5+、Chrome4.0+、Safari3.1+、Opera10.0+、iOS Mobile、Safari4.2+；</p>
+</li>
+<li><p>Web Open Font Format(.woff)格式<br>woff字体是Web字体中最佳格式，他是一个开放的TrueType/OpenType的压缩版本，同时也支持元数据包的分离，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome6+、Safari3.6+、Opera11.1+；</p>
+</li>
+<li><p>Embedded Open Type(.eot)格式<br>.eot字体是IE专用字体，可以从TrueType创建此格式字体，支持这种字体的浏览器有IE4+；</p>
+</li>
+<li><p>SVG(.svg)格式<br>.svg字体是基于SVG字体渲染的一种格式，支持这种字体的浏览器有Chrome4+、Safari3.1+、Opera10.0+、iOS Mobile Safari3.2+；</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/20/CSS3总结系列之三/" data-id="cjlz6ef8p0002c0whrjn07hf6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/12/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/20/CSS3总结系列之二/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS3总结系列之二</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/09/12/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/20/CSS3总结系列之三/">CSS3总结系列之三</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/20/CSS3总结系列之二/">CSS3总结系列之二</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/古诗词系列之一/">古诗词系列之一</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/04/CSS3总结系列之一/">CSS3总结系列之一</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 J.C<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

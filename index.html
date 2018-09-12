@@ -107,6 +107,724 @@
 
 
   
+    <article id="post-CSS3总结系列之三" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/20/CSS3总结系列之三/" class="article-date">
+  <time datetime="2017-03-20T09:20:43.000Z" itemprop="datePublished">2017-03-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/20/CSS3总结系列之三/">CSS3总结系列之三</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="弹性盒子"><a href="#弹性盒子" class="headerlink" title="弹性盒子"></a>弹性盒子</h2><p>弹性盒子是 CSS3 的一种新的布局模式；<br>CSS3 弹性盒（ Flexible Box 或 flexbox），是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式；<br>引入弹性盒布局模型的目的是提供一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间；</p>
+<p>主轴：Flex容器的主轴主要用来配置Flex项目，默认是水平方向<br>侧轴：与主轴垂直的轴称作侧轴，默认是垂直方向的<br>方向：默认主轴从左向右，侧轴默认从上到下<br>主轴和侧轴并不是固定不变的，通过flex-direction可以互换。</p>
+<ul>
+<li><p>必要元素：</p>
+<ul>
+<li>指定一个盒子为伸缩盒子 display: flex</li>
+<li>设置属性来调整此盒的子元素的布局方式 例如 flex-direction</li>
+<li>明确主侧轴及方向</li>
+<li>可互换主侧轴，也可改变方向</li>
+</ul>
+</li>
+<li><p>各属性详解</p>
+<ul>
+<li>flex-direction调整主轴方向 row （横向从左到右排列（左对齐） 默认）、row-reverse（反转横向排列）、column（纵向排列）、column-reverse（翻转纵向排列）</li>
+<li>justify-content调整主轴对齐flex-start （弹性项目向行头紧挨着填充，默认）、 flex-end（弹性项目向行尾紧挨着填充）、center（弹性项目居中紧挨着填充）、space-between（弹性项目平均分布在该行上）、space-around（弹性项目平均分布在该行上，两边留有一半的间隔空间）</li>
+<li>align-items调整侧轴对齐flex-start、flex-end、center 、baseline（如弹性盒子元素的行内轴与侧轴为同一条，则该值与’flex-start’等效。其它情况下，该值将参与基线对齐）、 stretch（如果指定侧轴大小的属性值为’auto’，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照’min/max-width/height’属性的限制）</li>
+<li>flex-wrap控制是否换行nowrap（默认， 弹性容器为单行，该情况下弹性子项可能会溢出容器）、wrap（多行）wrap-reverse （反转 wrap 排列）</li>
+<li>align-content堆栈（由flex-wrap产生的独立行）对齐 flex-start | flex-end | center | space-between | space-around | stretch</li>
+<li>flex-flow是flex-direction、flex-wrap的简写形式</li>
+<li>flex子项目在主轴的缩放比例，不指定flex属性，则不参与伸缩分配</li>
+<li>order控制子项目的排列顺序，正序方式排序，从小到大</li>
+</ul>
+</li>
+</ul>
+<h2 id="多列布局"><a href="#多列布局" class="headerlink" title="多列布局"></a>多列布局</h2><p>CSS3 可以将文本内容设计成像报纸一样的多列布局；</p>
+<ul>
+<li>属性如下：</li>
+</ul>
+<p>column-count 指定元素应该被分割的列数<br>column-fill     指定如何填充列<br>column-gap    指定列与列之间的间隙<br>column-rule-color    指定两列间边框的颜色<br>column-rule-style    指定两列间边框的样式<br>column-rule-width    指定两列间边框的厚度<br>column-span    指定元素要跨越多少列<br>column-width    指定列的宽度<br>columns    设置 column-width 和 column-count 的简写<br>column-rule    所有 column-rule- * 属性的简写，可设置颜色，样式，厚度</p>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>不同浏览器所支持的字体格式是不一样的</p>
+<ul>
+<li><p>TureType(.ttf)格式<br>.ttf字体是Windows和Mac的最常见的字体，是一种RAW格式，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome4+、Safari3+、Opera10+、iOS Mobile、Safari4.2+；</p>
+</li>
+<li><p>OpenType(.otf)格式<br>.otf字体被认为是一种原始的字体格式，其内置在TureType的基础上，支持这种字体的浏览器有Firefox3.5+、Chrome4.0+、Safari3.1+、Opera10.0+、iOS Mobile、Safari4.2+；</p>
+</li>
+<li><p>Web Open Font Format(.woff)格式<br>woff字体是Web字体中最佳格式，他是一个开放的TrueType/OpenType的压缩版本，同时也支持元数据包的分离，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome6+、Safari3.6+、Opera11.1+；</p>
+</li>
+<li><p>Embedded Open Type(.eot)格式<br>.eot字体是IE专用字体，可以从TrueType创建此格式字体，支持这种字体的浏览器有IE4+；</p>
+</li>
+<li><p>SVG(.svg)格式<br>.svg字体是基于SVG字体渲染的一种格式，支持这种字体的浏览器有Chrome4+、Safari3.1+、Opera10.0+、iOS Mobile Safari3.2+；</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/20/CSS3总结系列之三/" data-id="cjlz6ef8p0002c0whrjn07hf6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS3总结系列之二" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/20/CSS3总结系列之二/" class="article-date">
+  <time datetime="2017-03-20T08:27:59.000Z" itemprop="datePublished">2017-03-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/20/CSS3总结系列之二/">CSS3总结系列之二</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2D转换"><a href="#2D转换" class="headerlink" title="2D转换"></a>2D转换</h2><h3 id="translate-方法"><a href="#translate-方法" class="headerlink" title="translate() 方法"></a>translate() 方法</h3><p>translate()方法，根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动；<br>移动 translate(x, y) 可以改变元素的位置，x、y可为负值：</p>
+<ul>
+<li>移动位置相当于自身原来位置</li>
+<li>y轴正方向朝下</li>
+<li>除了可以像素值，也可以是百分比，相对于自身的宽度或高度</li>
+<li><code>transform: translate(50px,100px);</code> 是从左边元素移动50个像素，并从顶部移动100像素</li>
+</ul>
+<h3 id="rotate-方法"><a href="#rotate-方法" class="headerlink" title="rotate() 方法"></a>rotate() 方法</h3><p>rotate()方法，在一个给定度数顺时针旋转的元素。负值是元素逆时针旋转：<br><code>transform: rotate(30deg);</code>  元素顺时针旋转30度</p>
+<h3 id="scale-方法"><a href="#scale-方法" class="headerlink" title="scale() 方法"></a>scale() 方法</h3><p>scale()方法，该元素增加或减少的大小，取决于宽度（X轴）和高度（Y轴）的参数：<br><code>transform: scale(2,3);</code> 转变宽度为原来的大小的2倍，和其原始大小3倍的高度</p>
+<h3 id="skew-方法"><a href="#skew-方法" class="headerlink" title="skew() 方法"></a>skew() 方法</h3><p>transform:skew(angle ,angle);<br>包含两个参数值，分别表示X轴和Y轴倾斜的角度，如果第二个参数为空，则默认为0，参数为负表示向相反方向倾斜,x、y的取值可为小数</p>
+<ul>
+<li>skewX(angle);表示只在X轴(水平方向)倾斜;</li>
+<li>skewY(angle);表示只在Y轴(垂直方向)倾斜;</li>
+</ul>
+<h3 id="matrix-方法"><a href="#matrix-方法" class="headerlink" title="matrix() 方法"></a>matrix() 方法</h3><p>matrix()方法和2D变换方法合并成一个;<br>matrix 方法有六个参数，包含旋转，缩放，移动（平移）和倾斜功能;<br><code>transform:matrix(0.866,0.5,-0.5,0.866,0,0);</code>旋转元素30°</p>
+<h2 id="3D"><a href="#3D" class="headerlink" title="3D"></a>3D</h2><h3 id="左手坐标系"><a href="#左手坐标系" class="headerlink" title="左手坐标系"></a>左手坐标系</h3><p>伸出左手，让拇指和食指成“L”形，大拇指向右，食指向上，中指指向前方。这样我们就建立了一个左手坐标系，拇指、食指和中指分别代表X、Y、Z轴的正方向；</p>
+<h3 id="左手法则"><a href="#左手法则" class="headerlink" title="左手法则"></a>左手法则</h3><p>左手握住旋转轴，竖起拇指指向旋转轴正方向，正向就是其余手指卷曲的方向。</p>
+<ul>
+<li>rotateX() 方法   围绕其在一个给定度数X轴旋转的元素</li>
+<li>rotateY() 方法   围绕其在一个给定度数Y轴旋转的元素</li>
+</ul>
+<h3 id="透视"><a href="#透视" class="headerlink" title="透视"></a>透视</h3><p>电脑显示屏是一个2D平面，图像之所以具有立体感（3D效果），其实只是一种视觉呈现，通过透视可以实现此目的。透视可以将一个2D平面，在转换的过程当中，呈现3D效果。<br>注：并非任何情况下需要透视效果，根据开发需要进行设置。<br>perspective有两种写法</p>
+<ul>
+<li>作为一个属性，设置给父元素，作用于所有3D转换的子元素</li>
+<li>作为transform属性的一个值，做用于元素自身</li>
+</ul>
+<h3 id="3D呈现"><a href="#3D呈现" class="headerlink" title="3D呈现"></a>3D呈现</h3><p>设置内嵌的元素在 3D 空间如何呈现，这些子元素必须为转换原素。</p>
+<ul>
+<li>flat：所有子元素在 2D 平面呈现</li>
+<li>preserve-3d：保留3D空间</li>
+</ul>
+<p>3D元素构建是指某个图形是由多个元素构成的，可以给这些元素的父元素设置transform-style: preserve-3d来使其变成一个真正的3D图形</p>
+<p>backface-visibility 设置元素背面是否可见</p>
+<p>perspective-origin 规定 3D 元素的底部位置</p>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>当在 @keyframes 创建动画，把它绑定到一个选择器，否则动画不会有任何效果。<br>指定至少这两个CSS3的动画属性绑定向一个选择器：</p>
+<ul>
+<li>规定动画的名称</li>
+<li>规定动画的时长</li>
+</ul>
+<p>注意: 必须定义动画的名称和动画的持续时间。如果省略的持续时间，动画将无法运行，因为默认值是0。</p>
+<p>动画是CSS3中具有颠覆性的特征之一，可通过设置多个节点来精确控制一个或一组动画，常用来实现复杂的动画效果</p>
+<ul>
+<li><p>必要元素：</p>
+<ul>
+<li>通过@keyframes指定动画序列；</li>
+<li>通过百分比将动画序列分割成多个节点；</li>
+<li>在各节点中分别定义各属性</li>
+<li>通过animation将动画应用于相应元素；</li>
+</ul>
+</li>
+<li><p>关键属性：</p>
+<ul>
+<li>animation-name设置动画序列名称</li>
+<li>animation-duration动画持续时间</li>
+<li>animation-delay定义动画什么时候开始</li>
+<li>animation-timing-function动画执行速度，linear（匀速）、ease（默认，动画以低速开始，然后加快，在结束前变慢）、ease-in（低速开始）、ease-out（低速结束）、ease-in-out（低速开始和结束）等</li>
+<li>animation-play-state动画播放状态，running、paused等</li>
+<li>animation-direction动画逆播，alternate（偶数次反向）、alternate-reverse（奇数次反向）、reverse（反向播放）等，默认normal</li>
+<li>animation-fill-mode动画执行完毕后状态，forwards、backwards等</li>
+<li>animation-iteration-count动画执行次数，inifinate（无限循环），等默认是1</li>
+<li>steps(60) 表示动画分成60步完成</li>
+</ul>
+</li>
+</ul>
+<p>参数值的顺序：<br>关于几个值，除了名字，动画时间，延时有严格顺序要求其它随意</p>
+<p>动画是使元素从一种样式逐渐变化为另一种样式的效果；<br>可以改变任意多的样式任意多的次数；<br>用百分比来规定变化发生的时间，或用关键词 “from” 和 “to”，等同于 0% 和 100%；<br>0% 是动画的开始，100% 是动画的完成；<br>为了得到最佳的浏览器支持，定义 0% 和 100% 选择器最好；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/20/CSS3总结系列之二/" data-id="cjlz6ef8l0001c0whxarw31v2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-古诗词系列之一" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/06/古诗词系列之一/" class="article-date">
+  <time datetime="2017-03-06T08:19:42.000Z" itemprop="datePublished">2017-03-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/06/古诗词系列之一/">古诗词系列之一</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="本文是在看了《中国诗词大会》后，总结的涉及到的完整诗词，仅个人爱好，陶冶情操…"><a href="#本文是在看了《中国诗词大会》后，总结的涉及到的完整诗词，仅个人爱好，陶冶情操…" class="headerlink" title="本文是在看了《中国诗词大会》后，总结的涉及到的完整诗词，仅个人爱好，陶冶情操…"></a>本文是在看了《中国诗词大会》后，总结的涉及到的完整诗词，仅个人爱好，陶冶情操…</h5><h3 id="唐·杜甫-《春夜喜雨》"><a href="#唐·杜甫-《春夜喜雨》" class="headerlink" title="唐·杜甫 《春夜喜雨》"></a>唐·杜甫 《春夜喜雨》</h3><blockquote>
+<p>好雨知时节，当春乃发生。<br>   随风潜入夜，润物细无声。<br>   野径云俱黑，江船火独明。<br>   晓看红湿处，花重锦官城。</p>
+</blockquote>
+<h3 id="唐·王维-《送元二使安西》"><a href="#唐·王维-《送元二使安西》" class="headerlink" title="唐·王维 《送元二使安西》"></a>唐·王维 《送元二使安西》</h3><blockquote>
+<p>渭城朝雨浥轻尘，客舍青青柳色新。<br>   劝君更尽一杯酒，西出阳关无故人。</p>
+</blockquote>
+<h3 id="唐·王维-《山居秋暝》"><a href="#唐·王维-《山居秋暝》" class="headerlink" title="唐·王维 《山居秋暝》"></a>唐·王维 《山居秋暝》</h3><blockquote>
+<p>空山新雨后，天气晚来秋。<br>   明月松间照，清泉石上流。<br>   竹喧归浣女，莲动下渔舟。<br>   随意春芳歇，王孙自可留。</p>
+</blockquote>
+<h3 id="唐·李白-《月下独酌》"><a href="#唐·李白-《月下独酌》" class="headerlink" title="唐·李白　《月下独酌》"></a>唐·李白　《月下独酌》</h3><blockquote>
+<p>花间一壶酒，独酌无相亲。<br>   举杯邀明月，对影成三人。<br>   月既不解饮，影徒随我身。<br>   暂伴月将影，行乐须及春。<br>   我歌月徘徊，我舞影零乱。<br>   醒时同交欢，醉后各分散。<br>   永结无情游，相期邈云汉。 </p>
+</blockquote>
+<h3 id="唐·李白-《早发白帝城》"><a href="#唐·李白-《早发白帝城》" class="headerlink" title="唐·李白　《早发白帝城》"></a>唐·李白　《早发白帝城》</h3><blockquote>
+<p>朝辞白帝彩云间，千里江陵一日还。<br>   两岸猿声啼不住，轻舟已过万重山。</p>
+</blockquote>
+<h3 id="唐·孟浩然-《过故人庄》"><a href="#唐·孟浩然-《过故人庄》" class="headerlink" title="唐·孟浩然　《过故人庄》"></a>唐·孟浩然　《过故人庄》</h3><blockquote>
+<p>故人具鸡黍，邀我至田家。<br>   绿树村边合，青山郭外斜。<br>   开轩面场圃，把酒话桑麻。<br>   待到重阳日，还来就菊花。</p>
+</blockquote>
+<h3 id="唐·岑参-《白雪歌送武判官归京》"><a href="#唐·岑参-《白雪歌送武判官归京》" class="headerlink" title="唐·岑参　《白雪歌送武判官归京》"></a>唐·岑参　《白雪歌送武判官归京》</h3><blockquote>
+<p>北风卷地白草折，胡天八月即飞雪。<br>   忽如一夜春风来，千树万树梨花开。<br>   散入珠帘湿罗幕，狐裘不暖锦衾薄。<br>   将军角弓不得控，都护铁衣冷难着。<br>   瀚海阑干百丈冰，愁云惨淡万里凝。<br>   中军置酒饮归客，胡琴琵琶与羌笛。<br>   纷纷暮雪下辕门，风掣红旗冻不翻。<br>   轮台东门送君去，去时雪满天山路。<br>   山回路转不见君，雪上空留马行处。</p>
+</blockquote>
+<h3 id="唐·王维-《九月九日忆山东兄弟》"><a href="#唐·王维-《九月九日忆山东兄弟》" class="headerlink" title="唐·王维　《九月九日忆山东兄弟》"></a>唐·王维　《九月九日忆山东兄弟》</h3><blockquote>
+<p>独在异乡为异客，每逢佳节倍思亲。<br>   遥知兄弟登高处，遍插茱萸少一人。</p>
+</blockquote>
+<h3 id="唐·李商隐-《登乐游原》"><a href="#唐·李商隐-《登乐游原》" class="headerlink" title="唐·李商隐　《登乐游原》"></a>唐·李商隐　《登乐游原》</h3><blockquote>
+<p>向晚意不适，驱车登古原。<br>   夕阳无限好，只是近黄昏。</p>
+</blockquote>
+<h3 id="唐·杜牧-《山行》"><a href="#唐·杜牧-《山行》" class="headerlink" title="唐·杜牧　《山行》"></a>唐·杜牧　《山行》</h3><blockquote>
+<p>远上寒山石径斜，白云生处有人家。<br>   停车坐爱枫林晚，霜叶红于二月花。</p>
+</blockquote>
+<h3 id="唐·王维-《竹里馆》"><a href="#唐·王维-《竹里馆》" class="headerlink" title="唐·王维　《竹里馆》"></a>唐·王维　《竹里馆》</h3><blockquote>
+<p>独坐幽篁里，弹琴复长啸。<br>   深林人不知，明月来相照。</p>
+</blockquote>
+<h3 id="唐·崔颢-《黄鹤楼》"><a href="#唐·崔颢-《黄鹤楼》" class="headerlink" title="唐·崔颢　《黄鹤楼》"></a>唐·崔颢　《黄鹤楼》</h3><blockquote>
+<p>昔人已乘黄鹤去，此地空余黄鹤楼。<br>   黄鹤一去不复返，白云千载空悠悠。<br>   晴川历历汉阳树，芳草萋萋鹦鹉洲。<br>   日暮乡关何处是？烟波江上使人愁。</p>
+</blockquote>
+<h3 id="唐·杜牧-《赤壁》"><a href="#唐·杜牧-《赤壁》" class="headerlink" title="唐·杜牧　《赤壁》"></a>唐·杜牧　《赤壁》</h3><blockquote>
+<p>折戟沉沙铁未销，自将磨洗认前朝。<br>   东风不与周郎便，铜雀春深锁二乔。</p>
+</blockquote>
+<h3 id="晋·陶渊明-《饮酒》"><a href="#晋·陶渊明-《饮酒》" class="headerlink" title="晋·陶渊明　《饮酒》"></a>晋·陶渊明　《饮酒》</h3><blockquote>
+<p>结庐在人境，而无车马喧。<br>   问君何能尔？心远地自偏。<br>   采菊东篱下，悠然见南山。<br>   山气日夕佳，飞鸟相与还。<br>   此中有真意，欲辨已忘言。</p>
+</blockquote>
+<h3 id="唐·王维-《使至塞上》"><a href="#唐·王维-《使至塞上》" class="headerlink" title="唐·王维　《使至塞上》"></a>唐·王维　《使至塞上》</h3><blockquote>
+<p>单车欲问边，属国过居延。<br>   征蓬出汉塞，归雁入胡天。<br>   大漠孤烟直，长河落日圆。<br>   萧关逢候吏，都护在燕然。</p>
+</blockquote>
+<h3 id="清·郑燮《竹石》"><a href="#清·郑燮《竹石》" class="headerlink" title="清·郑燮《竹石》"></a>清·郑燮《竹石》</h3><blockquote>
+<p>咬定青山不放松，立根原在破岩中。<br>   千磨万击还坚劲，任尔东西南北风。</p>
+</blockquote>
+<h3 id="唐·贺知章-《回乡偶书》"><a href="#唐·贺知章-《回乡偶书》" class="headerlink" title="唐·贺知章　《回乡偶书》"></a>唐·贺知章　《回乡偶书》</h3><blockquote>
+<p>少小离家老大回，<br>   乡音无改鬓毛催。<br>   儿童相见不相识，<br>　笑问客从何处来。</p>
+</blockquote>
+<h3 id="毛泽东-《七律·长征》"><a href="#毛泽东-《七律·长征》" class="headerlink" title="毛泽东　《七律·长征》"></a>毛泽东　《七律·长征》</h3><blockquote>
+<p>红军不怕远征，万水千山只等闲。<br>   五岭逶迤腾细浪，乌蒙磅礴走泥丸。<br>   金沙水拍云崖暖，大渡桥横铁索寒。<br>   更喜岷山千里雪，三军过后尽开颜。</p>
+</blockquote>
+<h3 id="唐·杜牧-《泊秦淮》"><a href="#唐·杜牧-《泊秦淮》" class="headerlink" title="唐·杜牧　《泊秦淮》"></a>唐·杜牧　《泊秦淮》</h3><blockquote>
+<p>烟笼寒水月笼沙，夜泊秦淮近酒家。<br>   商女不知亡国恨，隔江犹唱后庭花。</p>
+</blockquote>
+<h3 id="宋·苏轼-《卜算子·黄州定慧院寓居作》"><a href="#宋·苏轼-《卜算子·黄州定慧院寓居作》" class="headerlink" title="宋·苏轼　《卜算子·黄州定慧院寓居作》"></a>宋·苏轼　《卜算子·黄州定慧院寓居作》</h3><blockquote>
+<p>缺月挂疏桐，漏断人初静。<br>   谁见幽人独往来，缥缈孤鸿影。<br>   惊起却回头，有恨无人省。<br>   拣尽寒枝不肯栖，寂寞沙洲冷。</p>
+</blockquote>
+<h3 id="唐·温庭钧-《商山早行》"><a href="#唐·温庭钧-《商山早行》" class="headerlink" title="唐·温庭钧　《商山早行》"></a>唐·温庭钧　《商山早行》</h3><blockquote>
+<p>晨起动征铎，客行悲故乡。<br>  鸡声茅店月，人迹板桥霜。<br>  槲叶落山路，枳花明驿墙。<br>  因思杜陵梦，凫雁满回塘。</p>
+</blockquote>
+<h3 id="宋·辛弃疾《永遇乐·京口北固亭怀古》"><a href="#宋·辛弃疾《永遇乐·京口北固亭怀古》" class="headerlink" title="宋·辛弃疾《永遇乐·京口北固亭怀古》"></a>宋·辛弃疾《永遇乐·京口北固亭怀古》</h3><blockquote>
+<p>千古江山，英雄无觅孙仲谋处。<br>   舞榭歌台，风流总被雨打风吹去。<br>   斜阳草树，寻常巷陌，人道寄奴曾住。<br>   想当年，金戈铁马，气吞万里如虎。</p>
+</blockquote>
+<h3 id="唐·杜甫-《闻官军收河南河北》"><a href="#唐·杜甫-《闻官军收河南河北》" class="headerlink" title="唐·杜甫　《闻官军收河南河北》"></a>唐·杜甫　《闻官军收河南河北》</h3><blockquote>
+<p>剑外忽传收蓟北，初闻涕泪满衣裳。<br>   却看妻子愁何在，漫卷诗书喜欲狂。<br>  白日放歌须纵酒，青春作伴好还乡。<br>  即从巴峡穿巫峡，便下襄阳向洛阳。</p>
+</blockquote>
+<p>　</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/06/古诗词系列之一/" data-id="cjlz6ef8u0005c0wh4qt5y9t2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS3总结系列之一" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/04/CSS3总结系列之一/" class="article-date">
+  <time datetime="2017-03-04T06:50:33.000Z" itemprop="datePublished">2017-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/04/CSS3总结系列之一/">CSS3总结系列之一</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h2><h3 id="结构伪类："><a href="#结构伪类：" class="headerlink" title="结构伪类："></a>结构伪类：</h3><p>n遵循线性变化，其取值0、1、2、3、4、…<br>n可是多种形式：nth-child(2n+0)、nth-child(-1n+3)等；<br>注：指E元素的父元素，并对应位置的子元素必须是E</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">E:first-child 其父元素的第1个子元素；</span><br><span class="line">E:last-child 其父元素的最后1个子元素；</span><br><span class="line">E:nth-child(n) 其父元素的第n个子元素；</span><br><span class="line">E:nth-last-child(n) 其父元素的第n个子元素（倒着数）；</span><br></pre></td></tr></table></figure>
+<h3 id="空伪类"><a href="#空伪类" class="headerlink" title="空伪类"></a>空伪类</h3><p><code>E:empty 选中没有任何子节点的E元素;</code></p>
+<h3 id="目标伪类"><a href="#目标伪类" class="headerlink" title="目标伪类"></a>目标伪类</h3><p><code>E:target 结合锚点进行使用，处于当前锚点的元素会被选中，可以实现电梯导航；</code></p>
+<h3 id="排除伪类"><a href="#排除伪类" class="headerlink" title="排除伪类"></a>排除伪类</h3><p><code>E:not(selector) 除selector（任意选择器）外的元素会被选中；</code></p>
+<h2 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h2><p><code>E::first-letter文本的第一个单词或字（如中文、日文、韩文等）；</code></p>
+<p><code>E::first-line 文本第一行；</code></p>
+<p><code>E::selection 可改变选中文本的样式；</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">E::before和E::after</span><br><span class="line">在E元素内部的开始位置和结束位创建一个元素，该元素为行内元素，且必须要结合content属性使用；</span><br><span class="line">CSS3将伪对象选择符前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符，但以前的写法仍然有效；</span><br><span class="line">即E:after可转化为E::after</span><br></pre></td></tr></table></figure>
+<h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><h3 id="RGBA和HSLA：其中的A-表示透明度通道，即可以设置颜色值的透明度，相较opacity，它们不具有继承性，即不会影响子元素的透明度。"><a href="#RGBA和HSLA：其中的A-表示透明度通道，即可以设置颜色值的透明度，相较opacity，它们不具有继承性，即不会影响子元素的透明度。" class="headerlink" title="RGBA和HSLA：其中的A 表示透明度通道，即可以设置颜色值的透明度，相较opacity，它们不具有继承性，即不会影响子元素的透明度。"></a>RGBA和HSLA：其中的A 表示透明度通道，即可以设置颜色值的透明度，相较opacity，它们不具有继承性，即不会影响子元素的透明度。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Red、Green、Blue、Alpha即RGBA</span><br><span class="line">Hue、Saturation、Lightness、Alpha即HSLA</span><br><span class="line">不同的颜色表示方法其取值也不相同，具体如下：</span><br><span class="line">R、G、B 取值范围0~255</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">H 色调 取值范围0~360，0/360表示红色、120表示绿色、240表示蓝色</span><br><span class="line">S 饱和度 取值范围0%~100%</span><br><span class="line">L 亮度 取值范围0%~100%</span><br><span class="line">A 透明度 取值范围0~1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注：rgba()和opacity都能实现透明效果，但最大的不同是opacity作用于元素，以及元素内的所有内容的透明度；</span><br><span class="line">而rgba()只作用于元素的颜色或其背景色。（设置rgba透明的元素的子元素不会继承透明效果！）；</span><br><span class="line">transparent 不可调节透明度，始终完全透明；</span><br></pre></td></tr></table></figure>
+<h2 id="文本效果"><a href="#文本效果" class="headerlink" title="文本效果"></a>文本效果</h2><h3 id="文本阴影"><a href="#文本阴影" class="headerlink" title="文本阴影"></a>文本阴影</h3><p><code>text-shadow: 5px 5px 5px #FF0000;   
+指定了水平阴影，垂直阴影，模糊的距离，以及阴影的颜色;</code></p>
+<p><code>box-shadow 属性适用于盒子阴影   box-shadow: 10px 10px 5px #888888;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注意：水平偏移量 正值向右 负值向左；</span><br><span class="line">垂直偏移量 正值向下 负值向上；</span><br><span class="line">模糊度是不能为负值；</span><br></pre></td></tr></table></figure>
+<h3 id="Text-Overflow属性"><a href="#Text-Overflow属性" class="headerlink" title="Text Overflow属性"></a>Text Overflow属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text-overflow: clip；修剪文本</span><br><span class="line">text-overflow:ellipsis；	显示省略符号来代表被修剪的文本</span><br></pre></td></tr></table></figure>
+<p><code>注意：text-overflow: xxx；&quot;(只在 Firefox 浏览器下有效)；</code></p>
+<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><p>如果某个单词太长，不适合在一个区域内，它扩展到外面；<br>CSS3中，自动换行属性允许您强制文本换行 - 即使这意味着分裂它中间的一个字；<br><code>word-wrap:break-word;</code></p>
+<p>拆分换行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">word-break:normal;  使用浏览器默认的换行规则；</span><br><span class="line">word-break: keep-all;  允许在单词内换行；</span><br><span class="line">word-break: break-all;  只能在半角空格或连字符处换行；</span><br></pre></td></tr></table></figure></p>
+<h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><p><code>box-sizing: content-box(default)|border-box|inherit;</code> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">content-box：border和padding不计算入width之内</span><br><span class="line">padding-box：padding计算入width内</span><br><span class="line">inherit：指定box-sizing属性的值，应该从父元素继承</span><br></pre></td></tr></table></figure>
+<h2 id="圆角"><a href="#圆角" class="headerlink" title="圆角"></a>圆角</h2><h4 id="如果你在-border-radius-属性中只指定一个值，那么将生成-4-个-圆角-但是，如果你要在四个角上一一指定，可以使用以下规则："><a href="#如果你在-border-radius-属性中只指定一个值，那么将生成-4-个-圆角-但是，如果你要在四个角上一一指定，可以使用以下规则：" class="headerlink" title="如果你在 border-radius 属性中只指定一个值，那么将生成 4 个 圆角,但是，如果你要在四个角上一一指定，可以使用以下规则："></a>如果你在 border-radius 属性中只指定一个值，那么将生成 4 个 圆角,但是，如果你要在四个角上一一指定，可以使用以下规则：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">四个值: 第一个值为左上角，第二个值为右上角，第三个值为右下角，第四个值为左下角。</span><br><span class="line">三个值: 第一个值为左上角, 第二个值为右上角和左下角，第三个值为右下角</span><br><span class="line">两个值: 第一个值为左上角与右下角，第二个值为右上角与左下角</span><br><span class="line">一个值： 四个圆角值相同</span><br></pre></td></tr></table></figure>
+<h2 id="盒阴影"><a href="#盒阴影" class="headerlink" title="盒阴影"></a>盒阴影</h2><h5 id="与文字阴影类似，可分别设置盒子阴影偏移量、模糊度、颜色（可设透明度），如box-shadow-5px-5px-5px-CCC"><a href="#与文字阴影类似，可分别设置盒子阴影偏移量、模糊度、颜色（可设透明度），如box-shadow-5px-5px-5px-CCC" class="headerlink" title="与文字阴影类似，可分别设置盒子阴影偏移量、模糊度、颜色（可设透明度），如box-shadow: 5px 5px 5px #CCC"></a>与文字阴影类似，可分别设置盒子阴影偏移量、模糊度、颜色（可设透明度），如box-shadow: 5px 5px 5px #CCC</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">水平偏移量 正值向右 负值向左；</span><br><span class="line">垂直偏移量 正值向下 负值向上；</span><br><span class="line">模糊度是不能为负值；</span><br><span class="line">inset可以设置内阴影；</span><br></pre></td></tr></table></figure>
+<p><code>注意：设置边框阴影不会改变盒子的大小，即不会影响其兄弟元素的布局。可以设置多重边框阴影，实现更好的效果，增强立体感，符合渐进增强</code></p>
+<h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><h3 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变"></a>线性渐变</h3><p><code>background: linear-gradient(direction, color-stop1, color-stop2, ...);</code> 默认方向是从上至下 </p>
+<p>可以通过指定水平和垂直的起始位置来制作一个对角渐变：<code>background: -moz-linear-gradient(bottom right, red, blue);</code></p>
+<p>如果你想要在渐变的方向上做更多的控制，你可以定义一个角度，而不用预定义方向（to bottom、to top、to right、to left、to bottom right，等等）：<code>background: linear-gradient(angle, color-stop1, color-stop2);</code> 0deg 将创建一个从左到右的渐变，90deg 将创建一个从下到上的渐变。换算公式 90 - x = y 其中 x 为标准角度，y为非标准角度 </p>
+<h3 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变"></a>径向渐变</h3><p>默认情况下，渐变的中心是 center（表示在中心点），渐变的形状是 ellipse（表示椭圆形），渐变的大小是 farthest-corner（表示到最远的角落）</p>
+<p><code>background: radial-gradient(center, shape size, start-color, ..., last-color);</code></p>
+<p><code>形状为圆形的径向渐变：  background: radial-gradient(circle, red, yellow, green);</code></p>
+<h5 id="设置渐变方向，可以用关键字如to-top、to-right，也可以用角度（正负值均可）如45deg、-90deg等，当以角度做为参数时，可参照下图来使用，0deg从下往上，90deg从左向右，进而可以推算出180deg从上向下"><a href="#设置渐变方向，可以用关键字如to-top、to-right，也可以用角度（正负值均可）如45deg、-90deg等，当以角度做为参数时，可参照下图来使用，0deg从下往上，90deg从左向右，进而可以推算出180deg从上向下" class="headerlink" title="设置渐变方向，可以用关键字如to top、to right，也可以用角度（正负值均可）如45deg、-90deg等，当以角度做为参数时，可参照下图来使用，0deg从下往上，90deg从左向右，进而可以推算出180deg从上向下"></a>设置渐变方向，可以用关键字如to top、to right，也可以用角度（正负值均可）如45deg、-90deg等，当以角度做为参数时，可参照下图来使用，0deg从下往上，90deg从左向右，进而可以推算出180deg从上向下</h5><h3 id="透明度（Transparency）"><a href="#透明度（Transparency）" class="headerlink" title="透明度（Transparency）"></a>透明度（Transparency）</h3><p>CSS3 渐变也支持透明度，可用于创建减弱变淡的效果;<br>为了添加透明度，我们使用 rgba() 函数来定义颜色结点;<br>rgba() 函数中的最后一个参数可以是从 0 到 1 的值，它定义了颜色的透明度：0 表示完全透明，1 表示完全不透明;</p>
+<h2 id="过渡"><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h2><p>补间动画：自动完成从起始状态到终止状态的的过渡；<br>帧动画：通过一帧一帧的画面按照固定顺序和速度播放；<br>特点：当前元素只要有“属性”发生变化时，可以平滑的进行过渡，并不仅仅局限于hover状态；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">transition-property: none|all(默认) | property;  设置过渡属性，如width;</span><br><span class="line"></span><br><span class="line">transition-duration: 5s;  设置过渡时间，默认0s;</span><br><span class="line"></span><br><span class="line">transition-delay: 2s;  设置过渡延时，默认0s;</span><br><span class="line"></span><br><span class="line">transition-timing-function：</span><br><span class="line">linear	规定以相同速度开始至结束的过渡效果，</span><br><span class="line">ease	规定慢速开始，然后变快，然后慢速结束的过渡效果，</span><br><span class="line">ease-in	规定以慢速开始的过渡效果，</span><br><span class="line">ease-out	规定以慢速结束的过渡效果，</span><br><span class="line">linear	规定以相同速度开始至结束的过渡效果，</span><br><span class="line">ease	规定慢速开始，然后变快，然后慢速结束的过渡效果，</span><br><span class="line">ease-in	规定以慢速开始的过渡效果，</span><br><span class="line">ease-out	规定以慢速结束的过渡效果，</span><br><span class="line">ease-in-out	规定以慢速开始和结束的过渡效果，</span><br><span class="line">cubic-bezier(n,n,n,n)	在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值，</span><br><span class="line">设置过渡速度;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/04/CSS3总结系列之一/" data-id="cjlz6ef8f0000c0wh1zik7kt2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面向对象编程系列一" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/04/面向对象编程系列一/" class="article-date">
+  <time datetime="2017-03-04T06:45:43.000Z" itemprop="datePublished">2017-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/04/面向对象编程系列一/">面向对象编程系列一</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="原型："><a href="#原型：" class="headerlink" title="原型："></a>原型：</h2><h4 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h4><p>所谓原型就是一个函数的prototype属性所引用的对象；</p>
+<ul>
+<li>只要声明一个函数，那么原型就存在；</li>
+<li>当通过该函数创建出来的每一个对象，都共享此原型；</li>
+<li>也就是说上述创建出来的所有对象可以直接访问到原型上的任何成员（属性和方法）</li>
+</ul>
+<h4 id="代码块："><a href="#代码块：" class="headerlink" title="代码块："></a>代码块：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.log(fun.prototype); <span class="comment">//Object</span></span><br><span class="line"><span class="keyword">var</span> fn = <span class="keyword">new</span> fun();</span><br><span class="line"><span class="built_in">console</span>.log(fn); <span class="comment">//fun</span></span><br><span class="line"><span class="built_in">console</span>.log(fun.prototype.constructor === fn.__proto__.constructor); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h3 id="原型的本质"><a href="#原型的本质" class="headerlink" title="原型的本质"></a>原型的本质</h3><ul>
+<li>原型其本质就是 <strong>对象</strong></li>
+</ul>
+<h3 id="原型的好处"><a href="#原型的好处" class="headerlink" title="原型的好处"></a>原型的好处</h3><ul>
+<li>实现同类对象的数据共享</li>
+</ul>
+<h3 id="获取原型的方式"><a href="#获取原型的方式" class="headerlink" title="获取原型的方式"></a>获取原型的方式</h3><ul>
+<li>通过函数：<code>functionName.prototype</code></li>
+<li>通过对象：<code>object.__proto__</code></li>
+</ul>
+<h5 id="代码块：-1"><a href="#代码块：-1" class="headerlink" title="代码块："></a>代码块：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.log(fun.prototype); <span class="comment">//Object&#123;&#125;</span></span><br><span class="line"><span class="keyword">var</span> fn = <span class="keyword">new</span> fun();</span><br><span class="line"><span class="built_in">console</span>.log(fn.__proto__); <span class="comment">//Object&#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="原型属性"><a href="#原型属性" class="headerlink" title="原型属性"></a>原型属性</h3><ul>
+<li>站在函数的角度，原型可以被称为该函数的原型属性</li>
+</ul>
+<h3 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h3><ul>
+<li>站在对象的角度，原型可以被称为该对象的原型对象</li>
+</ul>
+<h3 id="原型的特性"><a href="#原型的特性" class="headerlink" title="原型的特性"></a>原型的特性</h3><ul>
+<li><strong>动态性</strong>：<ul>
+<li>给原型扩展成员会直接反应到已创建的对象身上</li>
+<li>替换原型对象，不会反映到已创建出来的对象。但是会直接影响之后创建出来的对象</li>
+</ul>
+</li>
+<li><strong>唯一性</strong><ul>
+<li>由同一函数创建出来的所有对象，共享同一个原型对象</li>
+</ul>
+</li>
+<li><strong>不可变性</strong><ul>
+<li>对象是无法改变原型对象上的任何成员`</li>
+</ul>
+</li>
+<li><strong>继承性</strong><ul>
+<li>所有对象都继承自它的原型对象</li>
+</ul>
+</li>
+</ul>
+<h2 id="对象的组成部分"><a href="#对象的组成部分" class="headerlink" title="对象的组成部分"></a>对象的组成部分</h2><ul>
+<li>对象自己本身</li>
+<li>它的原型</li>
+</ul>
+<p>每一个对象都有<strong>proto</strong>属性；那么就是说，每一个对象都有原型</p>
+<ul>
+<li><code>其中Math为单体对象，它是一个特殊的对象；</code></li>
+<li><code>数组的原型为Array</code></li>
+<li><code>对象的原型是Object</code></li>
+</ul>
+<h4 id="代码块：-2"><a href="#代码块：-2" class="headerlink" title="代码块："></a>代码块：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="built_in">console</span>.log(arr.__proto__ === <span class="built_in">Array</span>.prototype);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.__proto__ === <span class="built_in">Object</span>.prototype);</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj.__proto__ === <span class="built_in">Object</span>.prototype);</span><br></pre></td></tr></table></figure>
+<h5 id="执行结果全部为：true"><a href="#执行结果全部为：true" class="headerlink" title="执行结果全部为：true"></a>执行结果全部为：<code>true</code></h5><h3 id="对象的类型"><a href="#对象的类型" class="headerlink" title="对象的类型"></a>对象的类型</h3><ul>
+<li>就是它构造函数的名字</li>
+</ul>
+<h2 id="proto-兼容"><a href="#proto-兼容" class="headerlink" title="__proto__兼容"></a><code>__proto__</code>兼容</h2><ul>
+<li>非标准属性</li>
+</ul>
+<h3 id="代码块：-3"><a href="#代码块：-3" class="headerlink" title="代码块："></a>代码块：</h3><ul>
+<li><p>方法一：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPrototype</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 判断浏览器是否兼容__proto__</span></span><br><span class="line">    <span class="keyword">if</span> (obj.__proto__) &#123; <span class="comment">// 支持</span></span><br><span class="line">	<span class="keyword">return</span> obj.__proto__;</span><br><span class="line"> &#125; <span class="keyword">else</span> &#123; <span class="comment">// 不支持</span></span><br><span class="line">	<span class="comment">// 获取该对象的构造函数</span></span><br><span class="line">	<span class="comment">// 在通过此函数的prototype属性获取其原型对象</span></span><br><span class="line">	<span class="keyword">return</span> obj.constructor.prototype;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法二：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPrototype</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> !!obj.__proto__ ? obj.__proto__ : obj.constructor.prototype;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> A;</span><br><span class="line"><span class="built_in">console</span>.log(getPrototype(a).constructor); <span class="comment">//function A() &#123;&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/04/面向对象编程系列一/" data-id="cjlz6ef8s0004c0wh8d85hvh2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-服务器系列之一" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/04/服务器系列之一/" class="article-date">
+  <time datetime="2017-03-04T06:35:48.000Z" itemprop="datePublished">2017-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/04/服务器系列之一/">服务器系列之一</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="CS架构与BS框架"><a href="#CS架构与BS框架" class="headerlink" title="CS架构与BS框架"></a>CS架构与BS框架</h3><h5 id="CS架构："><a href="#CS架构：" class="headerlink" title="CS架构："></a>CS架构：</h5><ul>
+<li>Client/Server架构，即服务器/客户端架构。是大家熟知的软件系统体系结构，通过将任务合理分配到Client端和Server端，降低了系统的通讯开销，需要安装客户端才可进行管理操作。</li>
+</ul>
+<h5 id="BS架构："><a href="#BS架构：" class="headerlink" title="BS架构："></a>BS架构：</h5><ul>
+<li>B/S结构即浏览器和服务器结构，它是随着Internet技术的兴起，对C/S结构的一种变化或者改进的结构。在这种结构下，用户工作界面是通过WWW浏览器来实现，极少部分事务逻辑在前端(Browser)实现，但是主要事务逻辑在服务器端(Server)实现，形成所谓三层3-tier结构。B/S结构是WEB兴起后的一种网络结构模式，WEB浏览器是客户端最主要的应用软件。这种模式统一了客户端，将系统功能实现的核心部分集中到服务器上，简化了系统的开发、维护和使用。客户机上只要安装一个浏览器（Browser），如Netscape Navigator或Internet Explorer，服务器安装Oracle、Sybase、Informix或 SQL Server等数据库。浏览器通过Web Server同数据库进行数据交互。 这样就大大简化了客户端电脑载荷，减轻了系统维护与升级的成本和工作量，降低了用户的总体成本(TCO)。</li>
+</ul>
+<h5 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h5><ul>
+<li>CS是BS的升级；</li>
+<li>Client/Server是建立在局域网的基础上的；</li>
+<li>Browser/Server是建立在广域网的基础上的；</li>
+<li>　　1．硬件环境不同：C/S 一般建立在专用的网络上，小范围里的网络环境，局域网之间再通过专门服务器提供连接和数据交换服务。B/S 建立在广域网之上的， 不必是专门的网络硬件环境。例如电话上网，租用设备，信息管理，有比C/S更强的适应范围，一般只要有操作系统和浏览器就行；</li>
+<li>　　2．对安全要求不同：C/S 一般面向相对固定的用户群， 对信息安全的控制能力很强， 一般高度机密的信息系统采用C/S 结构适宜，可以通过B/S发布部分可公开信息。B/S 建立在广域网之上, 对安全的控制能力相对弱，面向是不可知的用户群；</li>
+<li>　　3．对程序架构不同：C/S 程序可以更加注重流程,，可以对权限多层次校验,，对系统运行速度可以较少考虑。B/S 对安全以及访问速度的多重的考虑,，建立在需要更加优化的基础之上，比C/S有更高的要求。 B/S结构的程序架构是发展的趋势，从MS的.Net系列的BizTalk 2000 Exchange 2000等，全面支持网络的构件搭建的系统.。SUN 和IBM推的JavaBean 构件技术等，使 B/S更加成熟；</li>
+<li>　　4．软件重用不同：C/S 程序可以不可避免的整体性考虑，构件的重用性不如在B/S要求…</li>
+<li>CS架构的优点就是基于客户机和服务器模式,大部分的运算是在客户机上运行,从而提高一定的效率,但是也因为他在客户机上运行,所以要安装客户端,也导致了软件维护和升级时的不方便,需要程序员亲自进行升级配置；</li>
+<li>然后BS架购的优点在于,软件维护和升级方便,只要能上网就能升级了且在很多地方都能够直接使用软件,而不需要安装,前提是你要能登陆到服务器；</li>
+</ul>
+<h3 id="服务器与客户端"><a href="#服务器与客户端" class="headerlink" title="服务器与客户端"></a>服务器与客户端</h3><h5 id="服务器："><a href="#服务器：" class="headerlink" title="服务器："></a>服务器：</h5><ul>
+<li>服务器，也称伺服器，是提供计算服务的设备。由于服务器需要响应服务请求，并进行处理，因此一般来说服务器应具备承担服务并且保障服务的能力。</li>
+<li>服务器的构成包括处理器、硬盘、内存、系统总线等，和通用的计算机架构类似，但是由于需要提供高可靠的服务，因此在处理能力、稳定性、可靠性、安全性、可扩展性、可管理性等方面要求较高。</li>
+<li>在网络环境下，根据服务器提供的服务类型不同，分为文件服务器，数据库服务器，应用程序服务器，WEB服务器等；</li>
+</ul>
+<h5 id="客户端："><a href="#客户端：" class="headerlink" title="客户端："></a>客户端：</h5><ul>
+<li>客户端（Client）或称为用户端，是指与服务器相对应，为客户提供本地服务的程序。除了一些只在本地运行的应用程序之外，一般安装在普通的客户机上，需要与服务端互相配合运行。因特网发展以后，较常用的用户端包括了如万维网使用的网页浏览器，收寄电子邮件时的电子邮件客户端，以及即时通讯的客户端软件等。对于这一类应用程序，需要网络中有相应的服务器和服务程序来提供相应的服务，如数据库服务，电子邮件服务等等，这样在客户机和服务器端，需要建立特定的通信连接，来保证应用程序的正常运行；</li>
+</ul>
+<h3 id="wamp安装及配置"><a href="#wamp安装及配置" class="headerlink" title="wamp安装及配置"></a>wamp安装及配置</h3><h5 id="安装（傻瓜式安装）"><a href="#安装（傻瓜式安装）" class="headerlink" title="安装（傻瓜式安装）"></a>安装（傻瓜式安装）</h5><h5 id="更改服务器配置"><a href="#更改服务器配置" class="headerlink" title="更改服务器配置:"></a>更改服务器配置:</h5><ul>
+<li><code>http://x.x.x.x:80</code> 为本机ip地址，相当于 <code>localhost</code>，可通过 <code>ipconfig</code> 查出</li>
+<li>打开文件名为 <code>httpd.conf</code> 文件，本机（我自己的电脑）文件地址为：<code>D:\OfficeSoftware\wampserver\wamp\bin\apache\Apache2.2.21\conf</code>  </li>
+<li>注意：该文件里面 <code>#</code> 标注的都是注释内容</li>
+<li><code>Listen 80</code> ,<code>SeverName localhost:80</code> 表示该端口号为80 ,修改端口号就修改这两个地方</li>
+<li><ul>
+<li>打开该文件，找到 <code>Allow form 127.0.0.1</code>改为 <code>Allow from all</code>，表示服务器可以访问所有IP</li>
+</ul>
+</li>
+<li><ul>
+<li>修改wamp默认文件地址： <code>DocumentRoot &quot;E:\doc\ajax&quot;</code> 和 <code>&lt;Directory &quot;E:\doc\ajax&quot;&gt;</code> 两处，可以更改服务器默认地址</li>
+</ul>
+</li>
+<li>注意：修改配置文件需要重启服务</li>
+</ul>
+<h3 id="静态资源与动态资源"><a href="#静态资源与动态资源" class="headerlink" title="静态资源与动态资源"></a>静态资源与动态资源</h3><h5 id="静态资源："><a href="#静态资源：" class="headerlink" title="静态资源："></a>静态资源：</h5><ul>
+<li>相当于前台的HTML，CSS，JS等</li>
+</ul>
+<h5 id="动态资源："><a href="#动态资源：" class="headerlink" title="动态资源："></a>动态资源：</h5><p>－　相当于后台的JSP，ASP，PHP等</p>
+<h5 id="区别：-1"><a href="#区别：-1" class="headerlink" title="区别："></a>区别：</h5><ul>
+<li>假设我客户端浏览器访问的是静态资源，服务器直接返回静态资源</li>
+<li>假设我客户端访问的是动态资源，服务器会把动态资源转换成静态资源响应给客户端浏览器.</li>
+</ul>
+<h3 id="局域网和广域网"><a href="#局域网和广域网" class="headerlink" title="局域网和广域网"></a>局域网和广域网</h3><h5 id="局域网："><a href="#局域网：" class="headerlink" title="局域网："></a>局域网：</h5><ul>
+<li>局域网（Local Area Network，LAN）是指在某一区域内由多台计算机互联成的计算机组。一般是方圆几千米以内。局域网可以实现文件管理、应用软件共享、打印机共享、工作组内的日程安排、电子邮件和传真通信服务等功能。局域网是封闭型的，可以由办公室内的两台计算机组成，也可以由一个公司内的上千台计算机组成。</li>
+<li>局域网（Local Area Network，LAN）是在一个局部的地理范围内（如一个学校、工厂和机关内），一般是方圆几千米以内，将各种计算机，外部设备和数据库等互相联接起来组成的计算机通信网。它可以通过数据通信网或专用数据电路，与远方的局域网、数据库或处理中心相连接，构成一个较大范围的信息处理系统。</li>
+<li>局域网可以实现文件管理、应用软件共享、打印机共享、扫描仪共享、工作组内的日程安排、电子邮件和传真通信服务等功能。局域网严格意义上是封闭型的。它可以由办公室内几台甚至上千上万台计算机组成。决定局域网的主要技术要素为：网络拓扑，传输介质与介质访问控制方法。<br>局域网由网络硬件（包括网络服务器、网络工作站、网络打印机、网卡、网络互联设备等）和网络传输介质，以及网络软件所组成。</li>
+</ul>
+<h5 id="广域网："><a href="#广域网：" class="headerlink" title="广域网："></a>广域网：</h5><ul>
+<li>广域网（WAN，Wide Area Network）也称远程网（long haul network ）。通常跨接很大的物理范围，所覆盖的范围从几十公里到几千公里，它能连接多个城市或国家，或横跨几个洲并能提供远距离通信，形成国际性的远程网络。</li>
+<li>覆盖的范围比局域网（LAN）和城域网（MAN）都广。广域网的通信子网主要使用分组交换技术。广域网的通信子网可以利用公用分组交换网、卫星通信网和无线分组交换网，它将分布在不同地区的局域网或计算机系统互连起来，达到资源共享的目的。如因特网（Internet）是世界范围内最大的广域网。</li>
+<li>广域网是由许多交换机组成的，交换机之间采用点到点线路连接，几乎所有的点到点通信方式都可以用来建立广域网，包括租用线路、光纤、微波、卫星信道。而广域网交换机实际上就是一台计算机，有处理器和输入/输出设备进行数据包的收发处理。</li>
+</ul>
+<h5 id="区别：-2"><a href="#区别：-2" class="headerlink" title="区别："></a>区别：</h5><ul>
+<li>局域网是在某一区域内的，而广域网要跨越较大的地域，那么如何来界定这个区域呢？例如，一家大型公司的总公司位于北京，而分公司遍布全国各地，如果该公司将所有的分公司都通过网络联接在一起，那么一个分公司就是一个局域网，而整个总公司网络就是一个广域网。</li>
+</ul>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><ul>
+<li>DNS（Domain Name System，域名系统），因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。<code>通过主机名，最终得到该主机名对应的IP地址的过程叫做域名解析（或主机名解析）。</code>DNS协议运行在UDP协议之上，使用端口号53。在RFC文档中RFC 2181对DNS有规范说明，RFC 2136对DNS的动态更新进行说明，RFC 2308对DNS查询的反向缓存进行说明。</li>
+</ul>
+<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><ul>
+<li>网络之间互连的协议（IP）是Internet Protocol的外语缩写，[1]  中文缩写为“网协”.</li>
+<li>网络之间互连的协议也就是为计算机网络相互连接进行通信而设计的协议。在因特网中，它是能使连接到网上的所有计算机网络实现相互通信的一套规则，规定了计算机在因特网上进行通信时应当遵守的规则。任何厂家生产的计算机系统，只要遵守IP协议就可以与因特网互连互通。IP地址具有唯一性，根据用户性质的不同，可以分为5类。另外，IP还有进入防护，知识产权，指针寄存器等含义。</li>
+</ul>
+<h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><ul>
+<li>域名（Domain Name），是由一串用点分隔的名字组成的Internet上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置，地理上的域名，指代有行政自主权的一个地方区域）。域名是一个IP地址上有“面具” 。一个域名的目的是便于记忆和沟通的一组服务器的地址（网站，电子邮件，FTP等）。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/04/服务器系列之一/" data-id="cjlz6ef8z0006c0wh4eld9ql4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-PHP系列之一" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/04/PHP系列之一/" class="article-date">
+  <time datetime="2017-03-04T06:25:17.000Z" itemprop="datePublished">2017-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/04/PHP系列之一/">PHP系列之一</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+<li>运行在服务器端</li>
+<li>跨平台：服务器可以是多种平台的服务器，比如Linux、Windows、Unix</li>
+<li>脚本语言：它是通过编写脚本，也就是一行行的计算机指令，来指挥服务器来工作的</li>
+<li>免费：免费使用（天下还真有免费的午餐）</li>
+</ul>
+<h3 id="PHP代码标识"><a href="#PHP代码标识" class="headerlink" title="PHP代码标识"></a>PHP代码标识</h3><ul>
+<li>&lt;?php ?&gt;</li>
+<li>就像可以编写JavaScript脚本语言需要写在 <code>&lt;script&gt;</code> <code>&lt;/script &gt;</code>标签之间一样，可以在页面中编写PHP代码写在 <code>&lt;?php?&gt;</code> 标签之间，但注意后面的 <code>?&gt;</code> 是可以省略的 </li>
+</ul>
+<h3 id="语句输出："><a href="#语句输出：" class="headerlink" title="语句输出："></a>语句输出：</h3><ul>
+<li><code>echo &#39;Hello world!！&#39;;</code></li>
+</ul>
+<h3 id="计算表达式"><a href="#计算表达式" class="headerlink" title="计算表达式"></a>计算表达式</h3><ul>
+<li>不同于HTML和CSS，在php中我们可以做计算</li>
+<li><code>&lt;?php echo 12*3;?&gt;</code></li>
+</ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
+<li>一个字符串是用双引号括起来的一个词或一个句字,也可以用单引号括起来,可以把两个字符用连接符连接起来<ul>
+<li>注意:连接符可以连接多个字符串</li>
+<li><code>&lt;?php echo &#39;Hi,&#39;.&#39;World!&#39;;?&gt;</code></li>
+</ul>
+</li>
+<li>在php中字符串连接符是用点（.）来表示的，这一点比较特殊，其它语言中是用加号（+）来表示的</li>
+</ul>
+<h3 id="语句结束符"><a href="#语句结束符" class="headerlink" title="语句结束符"></a>语句结束符</h3><ul>
+<li>有的小伙伴们是不是已经注意在每一条PHP代码行结尾处都会有一个分号；。对的，这点注意，在PHP编程中需要在每条语句的末尾加入分号 <code>；</code> 但要注意，分号；一定在半角状态下输入噢</li>
+</ul>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ul>
+<li>在PHP中也有注释语句：用 <code>双斜杠（//）</code> 来表示。其它语言中，Html中使用<!--注释语句-->，CSS中使用 <code>/*注释语句*/</code></li>
+</ul>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
+<li>变量是用于存储值的，这里变量声明用 <code>$</code></li>
+<li><code>$var = &quot;PHP&quot;;</code></li>
+</ul>
+<h3 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h3><ul>
+<li>变量名必须以字母或下划线 “_”开头,如”$_name”,”$name” ,”$name2”等，但是”$9name”是不对的</li>
+<li>变量名只能由字母、数字、以及“_”组成，还能包含汉字。如”$_qq”,”$qq308” ,”$my_apple”，“比如”$name我等”，但是”$name*”是不对的</li>
+<li>变量名不允许包含空格。当变量名由多个单词组成，建议使用“_”进行分隔（比如 $my_apple），俗称下划线法，或者以大写字母开头比如 $myApple，俗称骆驼式命名法（也称驼峰命名法）</li>
+<li><code>注意：在PHP中变量名是区分大小写的，如“$my_book”与“$my_Book”代表两个不同的变量</code></li>
+</ul>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h5 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h5><ul>
+<li>尔类型（boolean）：只有两个值，一个是TRUE，另一个FALSE，可以理解为是或否。它不区分大小写，也就是说”TRUE”和“true”效果是一样的。主要用在条件结构（条件结构在后面部分会介绍）中，例如判断是否满足条件的时候，是用“true”表示满足，用“false”表示不满足。需要注意的是，当我们用”echo”指令输出布尔类型时，如果是“true”则输出的是“1”，“false”则什么也不输出。我们可以使用“var_dump”函数，获取它真正的数据类型。</li>
+<li><code>&lt;?php $flag=true; ?&gt;</code></li>
+</ul>
+<h5 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h5><ul>
+<li>整型（integer）：类似于常见的整数。它可以用十进制、八进制、十六进制指定。十进制就是日常使用的数字；八进制，数字前必须加上“0”(这个0是阿拉伯数字0，可不是英文字母“欧”哦)；十六进制，数字前必须加“0x” (这个0也是阿拉伯数字0，不是“欧”哦</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$data_int = 1234;   // 十进制数 </span><br><span class="line">$data_int = -567;    // 一个负数</span><br><span class="line">$data_int = 0123;    // 八进制数（等于十进制的 83）</span><br><span class="line">$data_int = 0x1a;    // 十六进制数（等于十进制的 26）</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h5><ul>
+<li>浮点型（浮点数、双精度数或实数），也就是通常说的小数，可以用小数点或者科学计数法表示。科学计数法可以使用小写的e，也可以使用大写的E</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$num_float = 1.234;    //小数点  </span><br><span class="line">$num_float = 1.2e3;    //科学计数法，小写e  </span><br><span class="line">$num_float = 7.0E-10;     //科学计数法，大写E  </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="字符串-1"><a href="#字符串-1" class="headerlink" title="字符串"></a>字符串</h5><ul>
+<li>字符串是由一系列字符组成，在PHP中，字符和字节一样，也就是说，一共有256种不同字符的可能性</li>
+<li>字符串型可以用三种方法定义：单引号形式、双引号形式和Heredoc结构形式</li>
+<li>当双引号中包含变量时，变量会与双引号中的内容连接在一起；当单引号中包含变量时，变量会被当做字符串输出。</li>
+<li>当字符串很长,可以使用Heredoc结构形式的方法来解决该问题，首先使用定界符表示字符串（&lt;&lt;&lt;），接着在“&lt;&lt;&lt;“之后提供一个标识符GOD，然后是字符串，最后以提供的这个标识符结束字符串 <code>$string1 = &lt;&lt;&lt;GOD; coding... GOD;</code></li>
+</ul>
+<h5 id="空类型"><a href="#空类型" class="headerlink" title="空类型"></a>空类型</h5><ul>
+<li>NULL（NULL）：NULL是空类型，对大小写不敏感，NULL类型只有一个取值，表示一个变量没有值，当被赋值为NULL，或者尚未被赋值，或者被unset()，这三种情况下变量被认为为NULL</li>
+</ul>
+<h5 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h5><ul>
+<li>常量可以理解为值不变的量（如圆周率）；或者是常量值被定义后，在脚本的其他任何地方都不可以被改变。PHP中的常量分为自定义常量和系统常量</li>
+<li>自定义常量是根据我们开发的需要，而定义的常量，它通过使用PHP中的函数define()定义</li>
+<li><code>bool define(string $constant_name, mixed $value[, $case_sensitive = true])</code></li>
+<li>第一个参数“constant_name”为必选参数，常量名称,即标志符，常量的命名规则与变量的一致，但是要注意哦，它可不带美元符号哦。第二个参数“value”为必选参数，它是常量的值。第三个参数“case_sensitive”为可选参数，指定是否大小写敏感，设定为true表示不敏感，一般不指定第三个参数的情况下，默认第三个参数的值为false</li>
+<li><code>注： string表示参数类型为字符串类型，mixed表示参数类型可以接受为多种不同的类型，case_sensitive = true表示默认为布尔类型TRUE</code></li>
+<li>取值(constant)： <code>mixed constant(string constant_name)</code><ul>
+<li>第一个参数constant_name为要获取常量的名称，也可为存储常量名的变量。如果成功则返回常量的值，失败则提示错误信息常量没有被定义。（注：mixed表示函数返回值类型为多种不同的类型，string表示参数类型为字符串类型）</li>
+</ul>
+</li>
+<li>常量是否被定义: <code>bool defined(string constants_name)</code><ul>
+<li>它只有参数constant_name，指的是要获取常量的名称，若存在则返回布尔类型true，否则返回布尔类型false; （注：bool表示函数返回值类型为布尔类型）</li>
+</ul>
+</li>
+</ul>
+<h5 id="系统常量"><a href="#系统常量" class="headerlink" title="系统常量"></a>系统常量</h5><ul>
+<li><strong>FILE</strong> :php程序文件名。它可以帮助我们获取当前文件在服务器的物理位置</li>
+<li><strong>LINE</strong> :PHP程序文件行数。它可以告诉我们，当前代码在第几行</li>
+<li>PHP_VERSION:当前解析器的版本号。它可以告诉我们当前PHP解析器的版本号，我们可以提前知道我们的PHP代码是否可被该PHP解析器解析</li>
+<li>PHP_OS：执行当前PHP版本的操作系统名称。它可以告诉我们服务器所用的操作系统名称，我们可以根据该操作系统优化我们的代码</li>
+</ul>
+<h3 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h3><ul>
+<li>资源（resource）：资源是由专门的函数来建立和使用的，例如打开文件、数据连接、图形画布。我们可以对资源进行操作（创建、使用和释放）。任何资源，在不需要的时候应该被及时释放。如果我们忘记了释放资源，系统自动启用垃圾回收机制，在页面执行完毕后回收资源，以避免内存被消耗殆尽</li>
+<li><code>$file_handle</code></li>
+</ul>
+<h3 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h3><h5 id="普通数组"><a href="#普通数组" class="headerlink" title="普通数组"></a>普通数组</h5><ul>
+<li>普通数组的定义，与遍历： </li>
+<li><code>for($i=0;$i&lt;count($array);$i++){}</code></li>
+</ul>
+<h5 id="关联数组"><a href="#关联数组" class="headerlink" title="关联数组"></a>关联数组</h5><ul>
+<li><code>$array=array(&quot;username&quot;=&gt;&quot;zhangsan&quot;)；</code></li>
+<li><code>foreach($array as $key=&gt;$val){}</code> </li>
+</ul>
+<h5 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h5><ul>
+<li>数组里面的元素是数组</li>
+<li><code>$array1=array(array(),array(),array())；</code></li>
+<li><code>for($i=0;$i&lt;count($array1);$i++){foreach($array[$i] as $key=&gt;$val){}</code></li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
+<li><code>function fn($username=&quot;zhangsan&quot;){echo &quot;lisi vs &quot;.$username;}</code> </li>
+</ul>
+<h5 id="输出函数"><a href="#输出函数" class="headerlink" title="输出函数"></a>输出函数</h5><ul>
+<li><code>print_r();</code>  输出数组里面的信息</li>
+<li><code>var_dump();</code> 输出数组里面的详细信息</li>
+<li><code>count();</code> 获取数组函数</li>
+<li><code>file_get_contents();</code> 读取一个文件里面的 内容</li>
+<li><code>in_array();</code> 判断数组当中是否存在某个元素</li>
+<li><code>array_key_exists;</code>  判断数组当中是否存在某个key</li>
+</ul>
+<h5 id="本文只是让你简单的了解PHP，只是入门级"><a href="#本文只是让你简单的了解PHP，只是入门级" class="headerlink" title="本文只是让你简单的了解PHP，只是入门级"></a>本文只是让你简单的了解PHP，只是入门级</h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/04/PHP系列之一/" data-id="cjlz6ef8q0003c0whj70eq2l8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/03/04/hexo搭建博客/" class="article-date">
@@ -236,7 +954,19 @@
           </li>
         
           <li>
-            <a href="/2017/03/04/hexo搭建博客/">使用hexo搭建简单静态博客并部署至github</a>
+            <a href="/2017/03/20/CSS3总结系列之三/">CSS3总结系列之三</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/20/CSS3总结系列之二/">CSS3总结系列之二</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/古诗词系列之一/">古诗词系列之一</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/04/CSS3总结系列之一/">CSS3总结系列之一</a>
           </li>
         
       </ul>
